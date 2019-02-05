@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Shopify/toxiproxy"
-	tclient "github.com/Shopify/toxiproxy/client"
+	"github.com/glothriel/toxiproxy"
+	tclient "github.com/glothriel/toxiproxy/client"
 )
 
 var testServer *toxiproxy.ApiServer

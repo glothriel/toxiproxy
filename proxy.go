@@ -2,13 +2,13 @@ package toxiproxy
 
 import (
 	"errors"
+	"net"
 	"sync"
+	"time"
 
-	"github.com/Shopify/toxiproxy/stream"
+	"github.com/glothriel/toxiproxy/stream"
 	"github.com/sirupsen/logrus"
 	tomb "gopkg.in/tomb.v1"
-
-	"net"
 )
 
 // Proxy represents the proxy in its entirity with all its links. The main
@@ -92,6 +92,24 @@ func (proxy *Proxy) Stop() {
 // server runs the Proxy server, accepting new clients and creating Links to
 // connect them to upstreams.
 func (proxy *Proxy) server() {
+	var upstreamConn net.Conn
+	var upstreamConnErr error
+
+	for upstreamConn == nil {
+		upstreamConn, upstreamConnErr = net.Dial("tcp", proxy.Upstream)
+		if upstreamConnErr != nil {
+			logrus.WithFields(logrus.Fields{
+				"name":     proxy.Name,
+				"proxy":    proxy.Listen,
+				"upstream": proxy.Upstream,
+			}).Warn("Cannot connect to upstream, backing off for 5 seconds...")
+			time.Sleep(time.Second * 5)
+		}
+	}
+	if upstreamConn != nil {
+		upstreamConn.Close()
+	}
+
 	ln, err := net.Listen("tcp", proxy.Listen)
 	if err != nil {
 		proxy.started <- err

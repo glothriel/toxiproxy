@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Shopify/toxiproxy/stream"
-	"github.com/Shopify/toxiproxy/toxics"
+	"github.com/glothriel/toxiproxy/stream"
+	"github.com/glothriel/toxiproxy/toxics"
 )
 
 func TestSlicerToxic(t *testing.T) {

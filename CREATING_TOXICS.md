@@ -27,7 +27,7 @@ func init() {
 ```
 
 In order to use your own toxics, you will need to compile your own binary. This can be
-done by copying [toxiproxy.go](https://github.com/Shopify/toxiproxy/blob/master/cmd/toxiproxy.go)
+done by copying [toxiproxy.go](https://github.com/glothriel/toxiproxy/blob/master/cmd/toxiproxy.go)
 into a new project and registering your toxic with the server. This will allow you to add toxics
 without having to make a full fork of the project. If you think your toxics will be useful
 to others, contribute them back with a Pull Request.
@@ -37,7 +37,7 @@ https://github.com/xthexder/toxic-example
 
 ## A basic toxic
 
-The most basic implementation of a toxic is the [noop toxic](https://github.com/Shopify/toxiproxy/blob/master/toxics/noop.go),
+The most basic implementation of a toxic is the [noop toxic](https://github.com/glothriel/toxiproxy/blob/master/toxics/noop.go),
 which just passes data through without any modifications.
 
 ```go
@@ -78,7 +78,7 @@ nil chunk is returned, the toxic should call `Close()` on the stub, and return f
 Toxic configuration information can be stored in the toxic struct. The toxic will be json
 encoded and decoded by the api, so all public fields will be api accessible.
 
-An example of a toxic that uses configuration values is the [latency toxic](https://github.com/Shopify/toxiproxy/blob/master/toxics/latency.go)
+An example of a toxic that uses configuration values is the [latency toxic](https://github.com/glothriel/toxiproxy/blob/master/toxics/latency.go)
 
 ```go
 type LatencyToxic struct {
@@ -99,7 +99,7 @@ By default, toxics are not buffered. This means that writes to `stub.Output` wil
 either the endpoint or another toxic reads it. Since toxics are chained together, this means
 not reading from `stub.Input` will block other toxics (and endpoint writes) from operating.
 If this is not behavior you want your toxic to have, you can specify a buffer size for your
-toxic's input. The [latency toxic](https://github.com/Shopify/toxiproxy/blob/master/toxics/latency.go)
+toxic's input. The [latency toxic](https://github.com/glothriel/toxiproxy/blob/master/toxics/latency.go)
 uses this in order to prevent added latency from limiting the proxy bandwidth.
 
 Specifying a buffer size is done by implementing the `BufferedToxic` interface, which adds the
@@ -136,7 +136,7 @@ not be thread-safe, so proper locking or atomic operations will need to be used.
 ## Using `io.Reader` and `io.Writer`
 
 If your toxic involves modifying the data going through a proxy, you can use the `ChanReader`
-and `ChanWriter` interfaces in the [stream package](https://github.com/Shopify/toxiproxy/tree/master/stream).
+and `ChanWriter` interfaces in the [stream package](https://github.com/glothriel/toxiproxy/tree/master/stream).
 These allow reading and writing from the input and output channels as you would a normal data
 stream such as a TCP socket.
 

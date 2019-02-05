@@ -8,8 +8,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Shopify/toxiproxy/stream"
-	"github.com/Shopify/toxiproxy/toxics"
+	"github.com/glothriel/toxiproxy/stream"
+	"github.com/glothriel/toxiproxy/toxics"
 )
 
 // ToxicCollection contains a list of toxics that are chained together. Each proxy

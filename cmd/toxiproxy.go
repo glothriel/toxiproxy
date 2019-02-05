@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Shopify/toxiproxy"
+	"github.com/glothriel/toxiproxy"
 )
 
 var host string

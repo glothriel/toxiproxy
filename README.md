@@ -1,5 +1,5 @@
 # Toxiproxy
-[![GitHub release](https://img.shields.io/github/release/Shopify/toxiproxy.svg)](https://github.com/Shopify/toxiproxy/releases/latest)
+[![GitHub release](https://img.shields.io/github/release/Shopify/toxiproxy.svg)](https://github.com/glothriel/toxiproxy/releases/latest)
 [![Build Status](https://img.shields.io/circleci/project/github/Shopify/toxiproxy/master.svg)](https://circleci.com/gh/Shopify/toxiproxy/tree/master)
 [![IRC Channel](https://img.shields.io/badge/chat-on%20freenode-brightgreen.svg)](https://kiwiirc.com/client/irc.freenode.net/#toxiproxy)
 
@@ -20,7 +20,7 @@ and can then manipulate their health via HTTP. See [Usage](#usage)
 below on how to set up your project.
 
 For example, to add 1000ms of latency to the response of MySQL from the [Ruby
-client](https://github.com/Shopify/toxiproxy-ruby):
+client](https://github.com/glothriel/toxiproxy-ruby):
 
 ```ruby
 Toxiproxy[:mysql_master].downstream(:latency, latency: 1000).apply do
@@ -75,8 +75,8 @@ development and CI environments.
 
 ## Clients
 
-* [toxiproxy-ruby](https://github.com/Shopify/toxiproxy-ruby)
-* [toxiproxy-go](https://github.com/Shopify/toxiproxy/tree/master/client)
+* [toxiproxy-ruby](https://github.com/glothriel/toxiproxy-ruby)
+* [toxiproxy-go](https://github.com/glothriel/toxiproxy/tree/master/client)
 * [toxiproxy-python](https://github.com/douglas/toxiproxy-python)
 * [toxiproxy.net](https://github.com/mdevilliers/Toxiproxy.Net)
 * [toxiproxy-php-client](https://github.com/ihsw/toxiproxy-php-client)
@@ -194,13 +194,13 @@ Configuring a project to use Toxiproxy consists of three steps:
 
 **Linux**
 
-See [`Releases`](https://github.com/Shopify/toxiproxy/releases) for the latest
+See [`Releases`](https://github.com/glothriel/toxiproxy/releases) for the latest
 binaries and system packages for your architecture.
 
 **Ubuntu**
 
 ```bash
-$ wget -O toxiproxy-2.1.4.deb https://github.com/Shopify/toxiproxy/releases/download/v2.1.4/toxiproxy_2.1.4_amd64.deb
+$ wget -O toxiproxy-2.1.4.deb https://github.com/glothriel/toxiproxy/releases/download/v2.1.4/toxiproxy_2.1.4_amd64.deb
 $ sudo dpkg -i toxiproxy-2.1.4.deb
 $ sudo service toxiproxy start
 ```
@@ -214,7 +214,7 @@ $ brew install toxiproxy
 
 **Windows**
 
-Toxiproxy for Windows is available for download at https://github.com/Shopify/toxiproxy/releases/download/v2.1.4/toxiproxy-server-windows-amd64.exe
+Toxiproxy for Windows is available for download at https://github.com/glothriel/toxiproxy/releases/download/v2.1.4/toxiproxy-server-windows-amd64.exe
 
 **Docker**
 
@@ -243,7 +243,7 @@ library supports the same version. You can check which version of Toxiproxy you 
 looking at the `/version` endpoint.
 
 See the documentation for your client library for specific library changes. Detailed changes
-for the Toxiproxy server can been found in [CHANGELOG.md](https://github.com/Shopify/toxiproxy/blob/master/CHANGELOG.md).
+for the Toxiproxy server can been found in [CHANGELOG.md](https://github.com/glothriel/toxiproxy/blob/master/CHANGELOG.md).
 
 ### 2. Populating Toxiproxy
 
@@ -332,7 +332,7 @@ Toxics manipulate the pipe between the client and upstream. They can be added
 and removed from proxies using the [HTTP api](#http-api). Each toxic has its own parameters
 to change how it affects the proxy links.
 
-For documentation on implementing custom toxics, see [CREATING_TOXICS.md](https://github.com/Shopify/toxiproxy/blob/master/CREATING_TOXICS.md)
+For documentation on implementing custom toxics, see [CREATING_TOXICS.md](https://github.com/glothriel/toxiproxy/blob/master/CREATING_TOXICS.md)
 
 #### latency
 
@@ -567,7 +567,7 @@ For example, `shopify_test_redis_master` or `shopify_development_mysql_1`.
 5. Commit
 6. Tag
 7. `make release` to create binaries, packages and push new Docker image
-8. Create [Github draft release](https://github.com/Shopify/toxiproxy/releases/new) against new tag and upload binaries and Debian package
+8. Create [Github draft release](https://github.com/glothriel/toxiproxy/releases/new) against new tag and upload binaries and Debian package
 9. [Bump version for Homebrew](https://github.com/Shopify/homebrew-shopify/blob/master/toxiproxy.rb#L9)
 
 

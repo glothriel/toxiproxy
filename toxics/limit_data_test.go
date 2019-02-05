@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/Shopify/toxiproxy/stream"
-	"github.com/Shopify/toxiproxy/toxics"
+	"github.com/glothriel/toxiproxy/stream"
+	"github.com/glothriel/toxiproxy/toxics"
 )
 
 func buffer(size int) []byte {

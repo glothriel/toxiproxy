@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Shopify/toxiproxy"
-	"github.com/Shopify/toxiproxy/testhelper"
-	"github.com/Shopify/toxiproxy/toxics"
+	"github.com/glothriel/toxiproxy"
+	"github.com/glothriel/toxiproxy/testhelper"
+	"github.com/glothriel/toxiproxy/toxics"
 )
 
 func WithEstablishedProxy(t *testing.T, f func(net.Conn, net.Conn, *toxiproxy.Proxy)) {

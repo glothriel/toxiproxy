@@ -1,12 +1,12 @@
 # toxiproxy-go
 
 This is the Go client library for the
-[Toxiproxy](https://github.com/shopify/toxiproxy) API. Please read the [usage
-section in the Toxiproxy README](https://github.com/shopify/toxiproxy#usage)
+[Toxiproxy](https://github.com/glothriel/toxiproxy) API. Please read the [usage
+section in the Toxiproxy README](https://github.com/glothriel/toxiproxy#usage)
 before attempting to use the client.
 
 This client is compatible with Toxiproxy 2.x, for the latest 1.x client see
-[v1.2.1](https://github.com/Shopify/toxiproxy/tree/v1.2.1/client).
+[v1.2.1](https://github.com/glothriel/toxiproxy/tree/v1.2.1/client).
 
 ## Changes in Toxiproxy-go Client 2.x
 
@@ -28,11 +28,11 @@ client api has changed:
 ## Usage
 
 For detailed API docs please [see the Godoc
-documentation](http://godoc.org/github.com/Shopify/toxiproxy/client).
+documentation](http://godoc.org/github.com/glothriel/toxiproxy/client).
 
 First import toxiproxy and create a new client:
 ```go
-import "github.com/Shopify/toxiproxy/client"
+import "github.com/glothriel/toxiproxy/client"
 
 client := toxiproxy.NewClient("localhost:8474")
 ```
@@ -92,7 +92,7 @@ import (
     "testing"
     "time"
 
-    "github.com/Shopify/toxiproxy/client"
+    "github.com/glothriel/toxiproxy/client"
     "github.com/garyburd/redigo/redis"
 )
 

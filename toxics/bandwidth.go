@@ -3,7 +3,7 @@ package toxics
 import (
 	"time"
 
-	"github.com/Shopify/toxiproxy/stream"
+	"github.com/glothriel/toxiproxy/stream"
 )
 
 // The BandwidthToxic passes data through at a limited rate

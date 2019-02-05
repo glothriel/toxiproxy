@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	toxiproxyServer "github.com/Shopify/toxiproxy"
-	"github.com/Shopify/toxiproxy/client"
+	toxiproxyServer "github.com/glothriel/toxiproxy"
+	"github.com/glothriel/toxiproxy/client"
 	"github.com/urfave/cli"
 	"golang.org/x/crypto/ssh/terminal"
 )

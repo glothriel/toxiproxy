@@ -32,10 +32,7 @@ func (collection *ProxyCollection) Add(proxy *Proxy, start bool) error {
 	}
 
 	if start {
-		err := proxy.Start()
-		if err != nil {
-			return err
-		}
+		go proxy.Start()
 	}
 
 	collection.proxies[proxy.Name] = proxy
@@ -55,10 +52,7 @@ func (collection *ProxyCollection) AddOrReplace(proxy *Proxy, start bool) error 
 	}
 
 	if start {
-		err := proxy.Start()
-		if err != nil {
-			return err
-		}
+		go proxy.Start()
 	}
 
 	collection.proxies[proxy.Name] = proxy

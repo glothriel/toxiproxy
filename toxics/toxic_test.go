@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Shopify/toxiproxy"
-	"github.com/Shopify/toxiproxy/toxics"
+	"github.com/glothriel/toxiproxy"
+	"github.com/glothriel/toxiproxy/toxics"
 	"github.com/sirupsen/logrus"
 	tomb "gopkg.in/tomb.v1"
 )

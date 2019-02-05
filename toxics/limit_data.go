@@ -1,6 +1,6 @@
 package toxics
 
-import "github.com/Shopify/toxiproxy/stream"
+import "github.com/glothriel/toxiproxy/stream"
 
 // LimitDataToxic has limit in bytes
 type LimitDataToxic struct {
